@@ -68,10 +68,20 @@
 	<script>
 		
 
-function myFunction() {
-    document.getElementById("myText").value = "blue";
-	
-}
+  $("#btnsbmt").click(function(){
+                    divObj = document.getElementById("destination");
+                    var result=divObj.textContent;
+                    var trimmed = result.substring(4);
+                    if(trimmed=="BLUE")
+                    {
+                    alert("HELLO!,Answer is CORRECT");
+                    $('#destination').empty();
+                    }
+                    else
+                    alert("HELLO.WRONG!");
+                    $('#destination').empty();   
+                    });
+
 	</script>
 		<body>  
 			
@@ -81,8 +91,8 @@ function myFunction() {
            
 			<ol>
             <div id="source3" class="source boxes">
-   <li>What is a color of  sky?</li>
-				 <br>
+   <li text-align:left>What is a color of  sky?</li>
+				 <br><br>
 				
                 <div>A</div>
                 <div>B</div>
@@ -113,23 +123,8 @@ function myFunction() {
             </div>
 				<center> <div id="destination" class="drop boxes"> </center>
             </div>
-			
+				<div id="btnsbmt"><input type="submit" value="submit"></div>
 			</div>
-			
-			
-
-<script>
-function answer() {
-
-var correct = "BLUE"; // This is the correct answer 
-if (tooLate == 0) {
-if(document.getElementById( 'answer').value == correct) {
-clearInterval(i);
-alert("Right Answer with " + n + " seconds remaining");
-}
-}
-}
-</script>
 			
     </body>
 </html>
