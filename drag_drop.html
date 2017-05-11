@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>drag-drop</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+        <script src="jquery.drag-drop.plugin.js"></script>
+	<script>
+	$(document).ready(function() {
+
+  // Function to update counters on all elements with class counter
+  var doUpdate = function() {
+    $('.countdown').each(function() {
+      var count = parseInt($(this).html());
+      if (count !== 0) {
+        $(this).html(count - 1);
+      }
+    });
+  };
+
+  // Schedule the update to happen once every second
+  setInterval(doUpdate, 1000);
+});
+	
+  $( function() {
+    $( "#sortable" ).sortable({
+      revert: true
+		
+    });
+    $( "#draggable" ).draggable({
+      connectToSortable: "#sortable",
+      helper: "clone",
+      revert: "invalid"
+    });
+    $( "ul, li" ).disableSelection();
+  } );
+  </script>
+       
+	
+    </head>
+	
+	 <script>
+            $(function() {
+               
+                $("#source3>div").dragdrop({
+                    makeClone: true,
+                    sourceClass: "pendingDrop",
+                    dropClass: "highlight",
+                    container: $('.content'),
+                    didDrop: function($src, $dst) {
+                        if ($dst.attr("id")!="destination")
+                            $dst = $dst.parents("#destination");
+                        var currentText = $dst.text();
+                        currentText += $src.text();
+                        $dst.text(currentText);
+                    }
+                });
+            });
+		
+		 
+        </script>
+	
+	
+	<script>
+		
+
+function myFunction() {
+    document.getElementById("myText").value = "blue";
+	
+}
+	</script>
+		<body>  
+			
+        <div class="content">
+            Timer:	 <div class="countdown">60</div><br>
+
+           
+			<ol>
+            <div id="source3" class="source boxes">
+   <li>What is a color of  sky?</li>
+				 <br>
+				
+                <div>A</div>
+                <div>B</div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+				<div>G</div>
+                <div>H</div>
+                <div>I</div>
+                <div>J</div>
+                <div>K</div>
+                <div>L</div>
+				<div>M</div>
+                <div>N</div>
+                <div>O</div>
+                <div>P</div>
+                <div>Q</div>
+                <div>R</div>
+				<div>S</div>
+                <div>T</div>
+                <div>U</div>
+                <div>V</div>
+                <div>W</div>
+                <div>X</div>
+				<div>Y</div>
+                <div>Z</div>
+            </div>
+				<center> <div id="destination" class="drop boxes"> </center>
+            </div>
+			
+			</div>
+			
+			
+
+<script>
+function answer() {
+
+var correct = "BLUE"; // This is the correct answer 
+if (tooLate == 0) {
+if(document.getElementById( 'answer').value == correct) {
+clearInterval(i);
+alert("Right Answer with " + n + " seconds remaining");
+}
+}
+}
+</script>
+			
+    </body>
+</html>
